@@ -38,7 +38,3 @@ class R:
     
 ara = R(list_num)
 print(ara.find_i(num))
-
-
-
-
