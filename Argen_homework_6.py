@@ -10,23 +10,24 @@
 # ДОП домашка :
 # Сделать в классах
  
-num = 6
-list_num = [3, 2, 11, 15, 2, 4]
+num = 9
+list_num = [2, 7, 2, 3, 7, 2]
 
 class R:
-    def __init__(self, lst, number) -> None:
+    def __init__(self, lst) -> None:
         self.lst = lst
-        self.number = number
 
-    def find_i(self):
-        c = 1 # счетчик и индекс два в одном
+    def find_i(self, number):
+        c = 0 # счетчик и индекс два в одном
         result = []
         while c != len(self.lst): # этот цикл берет один элемент с
             for i in self.lst: # а этот пробегает по всему списку и сравнивает с первым элементом
+                print(c)
                 if self.lst.index(i) == c: # если индексы одинаковы что бы они не учитывались
-                    continue # пропускаем
-                elif i + self.lst[c] == self.number:  # если дают нужное число вернем их
+                    break # пропускаем
+                if i + self.lst[c] == number:  # если дают нужное число вернем их
                     tuple_n = (self.lst.index(i), c) # кортеж который мы добавим в список
+                    print(tuple_n)
                     for i in result: # если такой ответ уже есть
                         if i == tuple_n: # пропустим его
                             break
@@ -34,7 +35,10 @@ class R:
                         result.append(tuple_n)
             c +=1 # если не нашли изменим индекс 1 элемента
         return result # в конце вернем список ответов
+    
+ara = R(list_num)
+print(ara.find_i(num))
 
 
-ara = R(list_num, num)
-print(ara.find_i())
+
+
