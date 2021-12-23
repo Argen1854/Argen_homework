@@ -16,7 +16,6 @@ list_num = [2, 7, 3, 7, 2, 2]
 class R:
     def __init__(self, lst) -> None:
         self.lst = lst
-
     def find_i(self, num):
         result = []
         for i in range(len(self.lst)):
